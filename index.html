@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noir Barbershop — Iași</title>
+<meta name="description" content="Noir Barbershop, Bulevardul Independenței 30, Iași. Tunsori, aranjat barbă și pachete premium. Programări la 0745 229 944.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0c0d'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' fill='%23d9b25f' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Noir Barbershop",
+  "image": "",
+  "telephone": "+40745229944",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bulevardul Independenței 30",
+    "addressLocality": "Iași",
+    "postalCode": "700099",
+    "addressCountry": "RO"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "10:00", "closes": "17:00"}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink: #0c0c0d;
+    --bone: #ece6da;
+    --bone-dim: #aba596;
+    --ember: #97732a;
+    --ember-bright: #d9b25f;
+    --line: #2c2c2e;
+    --gap: clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* film grain */
+  body::after{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    z-index:999;
+    opacity:0.045;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
+
+  ::selection{background:var(--ember); color:var(--ink);}
+  html{scrollbar-color:var(--ember) var(--ink); scrollbar-width:thin;}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--ink);}
+  ::-webkit-scrollbar-thumb{background:var(--ember); border:2px solid var(--ink); border-radius:6px;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--ember-bright);}
+
+  h1,h2,h3{font-family:'Bebas Neue', sans-serif; letter-spacing:0.02em; font-weight:400; line-height:0.95;}
+
+  .eyebrow{
+    font-size:0.75rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--ember-bright);
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:1.6em; height:1px;
+    background:var(--ember-bright);
+    display:inline-block;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding-left:clamp(1.25rem, 5vw, 3rem);
+    padding-right:clamp(1.25rem, 5vw, 3rem);
+  }
+
+  section{padding:clamp(4rem,9vw,7rem) 0;}
+
+  .section-title{
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    text-transform:uppercase;
+    margin:0.4rem 0 2.2rem;
+    position:relative;
+    padding-bottom:0.9rem;
+  }
+  .section-title::after{
+    content:"";
+    position:absolute; left:0; bottom:0;
+    width:46px; height:2px;
+    background:linear-gradient(90deg, var(--ember), var(--ember-bright));
+  }
+  .section-title.center::after{left:50%; transform:translateX(-50%);}
+
+  /* divider: thin barber-pole stripe, used sparingly */
+  .stripe-divider{
+    height:6px;
+    background:repeating-linear-gradient(45deg,
+      var(--ember) 0 10px,
+      var(--bone) 10px 20px,
+      var(--ink) 20px 30px);
+    opacity:0.85;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(12,12,13,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(217,178,95,0.22);
+    box-shadow:0 1px 0 rgba(217,178,95,0.06), 0 8px 24px rgba(0,0,0,0.35);
+  }
+  header::before{
+    content:"";
+    display:block;
+    height:3px;
+    background:linear-gradient(90deg, transparent, var(--ember) 18%, var(--ember-bright) 50%, var(--ember) 82%, transparent);
+    opacity:0.85;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0.8rem 0;
+  }
+  .logo{
+    display:flex; flex-direction:column; gap:0.18rem;
+    line-height:0.85;
+    margin-left:0.6rem;
+  }
+  .logo-main{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.7rem;
+    letter-spacing:0.16em;
+    color:var(--bone);
+  }
+  .logo-sub{
+    font-family:'Work Sans', sans-serif;
+    font-size:0.58rem;
+    font-weight:600;
+    letter-spacing:0.42em;
+    text-transform:uppercase;
+    color:var(--ember-bright);
+    padding-left:0.05em;
+  }
+
+  .nav-links{
+    display:flex; gap:2.2rem;
+    font-size:0.92rem;
+    letter-spacing:0.03em;
+  }
+  .nav-links a{
+    position:relative;
+    padding:0.2rem 0;
+    color:var(--bone-dim);
+    transition:color 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--bone);}
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px;
+    width:0; height:1px; background:var(--ember-bright);
+    transition:width 0.25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .nav-cta{
+    display:flex; align-items:center; gap:0.9rem;
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    gap:0.5em;
+    padding:0.85rem 1.6rem;
+    font-size:0.92rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    border-radius:3px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--ember); color:var(--ink); font-weight:700; box-shadow:0 4px 18px rgba(217,178,95,0.18);}
+  .btn-primary:hover{background:var(--ember-bright); transform:translateY(-2px); box-shadow:0 10px 24px rgba(217,178,95,0.28);}
+  .btn-ghost{border-color:var(--bone-dim); color:var(--bone);}
+  .btn-ghost:hover{border-color:var(--ember-bright); color:var(--ember-bright); transform:translateY(-2px);}
+  .btn-sm{padding:0.6rem 1.1rem; font-size:0.82rem;}
+
+  .icon-link{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:38px; height:38px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    color:var(--bone);
+    flex-shrink:0;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .icon-link:hover{border-color:var(--ember-bright); color:var(--ember-bright);}
+  footer .icon-link{width:30px; height:30px;}
+
+  :focus-visible{outline:2px solid var(--ember-bright); outline-offset:3px;}
+
+  .burger{display:none; background:none; border:none; color:var(--bone); font-size:1.6rem; cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex; align-items:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:-20% -10%;
+    background:repeating-linear-gradient(100deg,
+      transparent 0 38px,
+      rgba(236,230,218,0.05) 38px 44px,
+      transparent 44px 80px);
+    animation:blindsweep 26s linear infinite;
+    pointer-events:none;
+  }
+  @keyframes blindsweep{
+    0%{transform:translateX(0) translateY(0);}
+    100%{transform:translateX(-160px) translateY(40px);}
+  }
+  .hero::after{
+    content:"";
+    position:absolute; left:-10%; top:20%;
+    width:700px; height:700px;
+    background:radial-gradient(circle, rgba(217,178,95,0.07), transparent 65%);
+    pointer-events:none;
+  }
+  .hero-content{position:relative; z-index:2; max-width:760px;}
+  .hero h1{
+    font-size:clamp(3.2rem, 9vw, 6.8rem);
+    text-transform:uppercase;
+    margin:0.4rem 0 1.3rem;
+    color:var(--bone);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--ember-bright);
+  }
+  .hero p.lede{
+    font-size:1.1rem;
+    color:var(--bone-dim);
+    max-width:46ch;
+    margin-bottom:2.2rem;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2.4rem;}
+
+  .hero-rating{
+    display:flex; align-items:center; gap:0.6em;
+    font-size:0.92rem; color:var(--bone-dim);
+    margin-bottom:1.2rem;
+  }
+  .hero-rating .stars{color:var(--ember-bright); letter-spacing:0.1em; font-size:1rem;}
+
+  .status-badge{
+    display:inline-flex; align-items:center; gap:0.7em;
+    font-size:0.85rem; letter-spacing:0.06em;
+    color:var(--bone-dim);
+    border:1px solid var(--line);
+    background:rgba(236,230,218,0.03);
+    padding:0.55rem 1rem;
+    border-radius:999px;
+  }
+  .status-dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--bone-dim);
+    flex-shrink:0;
+  }
+  .status-badge.open .status-dot{
+    background:var(--ember-bright);
+    box-shadow:0 0 0 0 rgba(217,178,95,0.6);
+    animation:pulse 1.8s ease-out infinite;
+  }
+  .status-badge.open{color:var(--bone);}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(217,178,95,0.55);}
+    70%{box-shadow:0 0 0 9px rgba(217,178,95,0);}
+    100%{box-shadow:0 0 0 0 rgba(217,178,95,0);}
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:clamp(2rem,6vw,4rem);
+    align-items:start;
+    margin-top:1.6rem;
+  }
+  .about-grid h2{
+    font-size:clamp(2.1rem,4.5vw,3.2rem); margin:0.3rem 0 1.4rem; text-transform:uppercase;
+    position:relative; padding-bottom:0.9rem;
+  }
+  .about-grid h2::after{
+    content:""; position:absolute; left:0; bottom:0;
+    width:46px; height:2px; background:linear-gradient(90deg, var(--ember), var(--ember-bright));
+  }
+  .about-grid p{color:var(--bone-dim); max-width:54ch; margin-bottom:1.1rem;}
+
+  .tags{display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.4rem;}
+  .tag{
+    font-size:0.78rem; letter-spacing:0.04em;
+    border:1px solid var(--line);
+    color:var(--bone-dim);
+    padding:0.45rem 0.9rem;
+    border-radius:999px;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .tag:hover{border-color:rgba(217,178,95,0.5); color:var(--bone);}
+
+  .quickfacts{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:clamp(1.5rem,3vw,2.2rem);
+    background:linear-gradient(180deg, rgba(217,178,95,0.04), transparent 50%);
+  }
+  .quickfacts dt{
+    font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--ember-bright); margin-top:1.1rem;
+  }
+  .quickfacts dt:first-child{margin-top:0;}
+  .quickfacts dd{font-size:1.02rem; color:var(--bone); margin:0.25rem 0 0;}
+
+  /* ---------- SERVICES ---------- */
+  .services-head{text-align:center; margin-bottom:3rem;}
+  .services-head h2{
+    font-size:clamp(2.1rem,5vw,3.4rem); text-transform:uppercase; margin-top:0.3rem;
+    position:relative; padding-bottom:0.9rem; display:inline-block;
+  }
+  .services-head h2::after{
+    content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    width:46px; height:2px; background:linear-gradient(90deg, var(--ember), var(--ember-bright));
+  }
+
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1.4rem;
+  }
+  .why-card{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:2rem 1.5rem;
+    text-align:center;
+    transition:transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  .why-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(217,178,95,0.45);
+    box-shadow:0 12px 28px rgba(0,0,0,0.4);
+  }
+  .why-emoji{
+    display:block;
+    font-size:2.2rem;
+    margin-bottom:1rem;
+  }
+  .why-card h3{
+    font-family:'Work Sans', sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    text-transform:none;
+    color:var(--bone);
+    margin-bottom:0.6rem;
+  }
+  .why-card p{font-size:0.88rem; color:var(--bone-dim);}
+
+  .tickets{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
+  }
+  .ticket{
+    position:relative;
+    background:linear-gradient(180deg, rgba(236,230,218,0.035), transparent 40%);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:2rem 1.7rem 1.8rem;
+    transition:border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  .ticket:hover{
+    border-color:rgba(217,178,95,0.4);
+    box-shadow:0 12px 28px rgba(0,0,0,0.35);
+  }
+  .ticket::before, .ticket::after{
+    content:"";
+    position:absolute; left:50%; transform:translateX(-50%);
+    width:18px; height:18px; border-radius:50%;
+    background:var(--ink);
+    border:1px solid var(--line);
+  }
+  .ticket::before{top:-10px;}
+  .ticket::after{bottom:-10px;}
+  .ticket h3{
+    font-size:1.5rem; text-transform:uppercase;
+    color:var(--ember-bright);
+    margin-bottom:1.3rem;
+    padding-bottom:0.9rem;
+    border-bottom:1px dashed var(--line);
+  }
+  .svc-row{
+    display:flex; align-items:baseline; gap:0.5rem;
+    margin-bottom:1.05rem;
+  }
+  .svc-name{font-weight:600; font-size:0.98rem; color:var(--bone);}
+  .svc-time{display:block; font-size:0.74rem; color:var(--bone-dim); letter-spacing:0.02em; margin-top:0.15rem;}
+  .svc-fill{flex:1; border-bottom:1px dotted var(--line); transform:translateY(-4px);}
+  .svc-price{font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.03em; color:var(--bone); white-space:nowrap;}
+
+  /* ---------- TEAM ---------- */
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(220px,1fr));
+    gap:1.6rem;
+    max-width:680px;
+  }
+  .team-card{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:2rem 1.6rem;
+    text-align:center;
+    transition:transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  .team-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(217,178,95,0.45);
+    box-shadow:0 12px 28px rgba(0,0,0,0.4);
+  }
+  .monogram{
+    width:74px; height:74px;
+    border-radius:50%;
+    border:1px solid var(--ember-bright);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.8rem;
+    color:var(--ember-bright);
+    margin:0 auto 1.1rem;
+  }
+  .team-card h3{font-size:1.4rem; text-transform:uppercase; margin-bottom:0.3rem;}
+  .team-card p{font-size:0.85rem; color:var(--bone-dim); letter-spacing:0.04em;}
+  .team-role{margin-bottom:0.5rem;}
+  .team-rating{
+    font-size:0.85rem; color:var(--ember-bright); font-weight:600;
+    margin-bottom:0.8rem;
+  }
+  .team-rating .stars{letter-spacing:0;}
+  .team-desc{color:var(--bone-dim); font-size:0.85rem; line-height:1.55;}
+
+  /* ---------- REVIEWS ---------- */
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.4rem;
+  }
+  .review-card{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1.8rem 1.6rem;
+    transition:transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  .review-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(217,178,95,0.45);
+    box-shadow:0 12px 28px rgba(0,0,0,0.4);
+  }
+  .review-card .stars{
+    display:block;
+    color:var(--ember-bright);
+    letter-spacing:0.1em;
+    margin-bottom:0.9rem;
+    font-size:0.95rem;
+  }
+  .review-card p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.12rem;
+    color:var(--bone);
+    line-height:1.5;
+    margin-bottom:1rem;
+  }
+  .review-author{font-size:0.8rem; color:var(--bone-dim); letter-spacing:0.04em;}
+
+  /* ---------- INTERIOR / MOOD GRID ---------- */
+  .mood-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .mood-cell{
+    position:relative;
+    background:var(--ink);
+    aspect-ratio:1;
+    border:0; margin:0; padding:0;
+    display:block;
+    cursor:pointer;
+    overflow:hidden;
+    perspective:900px;
+    -webkit-tap-highlight-color:transparent;
+    transition:background 0.25s ease;
+  }
+  .mood-cell:hover{background:#141210;}
+  .mood-inner{
+    position:absolute; inset:0;
+    transform-style:preserve-3d;
+    transition:transform 0.65s cubic-bezier(0.5,0.2,0.2,1);
+  }
+  .mood-cell.flipped .mood-inner{transform:rotateY(180deg);}
+  .mood-face{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:0.55rem;
+    backface-visibility:hidden;
+    padding:0.85rem;
+    text-align:center;
+  }
+  .mood-front svg{width:32%; height:32%; stroke:var(--bone-dim); transition:stroke 0.25s ease, transform 0.25s ease;}
+  .mood-cell:hover .mood-front svg{stroke:var(--ember-bright); transform:scale(1.08);}
+  .mood-tag{font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--bone-dim);}
+  .mood-back{
+    transform:rotateY(180deg);
+    background:linear-gradient(160deg, rgba(217,178,95,0.16), rgba(12,12,13,0.94));
+  }
+  .mood-back-text{font-size:0.72rem; line-height:1.4; color:var(--bone);}
+  .mood-burst{
+    position:absolute; left:50%; top:50%;
+    width:10px; height:10px;
+    border-radius:50%;
+    border:2px solid var(--ember-bright);
+    transform:translate(-50%,-50%) scale(0);
+    opacity:0;
+    pointer-events:none;
+  }
+  .mood-cell.bursting .mood-burst{animation:moodburst 0.6s ease-out;}
+  @keyframes moodburst{
+    0%{transform:translate(-50%,-50%) scale(0); opacity:0.9;}
+    100%{transform:translate(-50%,-50%) scale(9); opacity:0;}
+  }
+  .mood-hint{
+    text-align:center; font-size:0.74rem; color:var(--bone-dim);
+    letter-spacing:0.04em; margin-top:1rem;
+  }
+
+  /* ---------- HOURS + MAP ---------- */
+  .hl-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:clamp(2rem,5vw,3.5rem);
+    align-items:stretch;
+  }
+  .hours-card{border:1px solid var(--line); border-radius:4px; padding:clamp(1.6rem,3vw,2.4rem);}
+  .hours-card h2{
+    font-size:clamp(1.9rem,4vw,2.6rem); text-transform:uppercase; margin:0.3rem 0 1.7rem;
+    position:relative; padding-bottom:0.9rem; display:inline-block;
+  }
+  .hours-card h2::after{
+    content:""; position:absolute; left:0; bottom:0;
+    width:40px; height:2px; background:linear-gradient(90deg, var(--ember), var(--ember-bright));
+  }
+  .hours-row{
+    display:flex; justify-content:space-between;
+    padding:0.75rem 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.95rem;
+  }
+  .hours-row:last-of-type{border-bottom:none;}
+  .hours-row span:first-child{color:var(--bone-dim);}
+  .hours-row span:last-child{font-weight:600;}
+
+  .map-wrap{border:1px solid var(--line); border-radius:4px; overflow:hidden; min-height:340px;}
+  .map-wrap iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(0.4) contrast(1.05);}
+
+  .addr-line{margin-top:1.4rem; font-size:0.92rem; color:var(--bone-dim);}
+  .addr-line a{color:var(--ember-bright); font-weight:600;}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    position:relative;
+    text-align:center;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .cta-band::before{
+    content:"";
+    position:absolute; left:50%; top:50%;
+    width:600px; height:600px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(217,178,95,0.08), transparent 70%);
+    pointer-events:none;
+  }
+  .cta-band .wrap{position:relative; z-index:1;}
+  .cta-band h2{
+    font-size:clamp(2.2rem,6vw,4rem); text-transform:uppercase; margin-bottom:1.6rem;
+    position:relative; padding-bottom:1rem; display:inline-block;
+  }
+  .cta-band h2::after{
+    content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    width:50px; height:2px; background:linear-gradient(90deg, var(--ember), var(--ember-bright));
+  }
+  .cta-band .hero-ctas{justify-content:center;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:2.6rem 0; font-size:0.82rem; color:var(--bone-dim);}
+  .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;}
+  footer a:hover{color:var(--bone);}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    display:none;
+    position:fixed; left:0; right:0; bottom:0; z-index:90;
+    gap:0.7rem;
+    padding:0.7rem clamp(1rem,4vw,1.5rem) calc(0.7rem + env(safe-area-inset-bottom));
+    background:rgba(12,12,13,0.96);
+    backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);
+  }
+  .sticky-cta .btn{flex:1; text-align:center;}
+  .sticky-cta .btn-ghost{flex:0 0 auto; padding-left:1.1rem; padding-right:1.1rem;}
+
+  /* ---------- MOBILE NAV ---------- */
+  .mobile-panel{
+    display:none;
+    position:fixed; inset:0 0 auto 0;
+    top:64px;
+    background:var(--ink);
+    border-bottom:1px solid var(--line);
+    padding:1.5rem clamp(1.25rem,5vw,3rem) 2rem;
+    z-index:99;
+  }
+  .mobile-panel.show{display:block;}
+  .mobile-panel a{display:block; padding:0.9rem 0; font-size:1.1rem; border-bottom:1px solid var(--line);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:880px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-cta .btn-ghost{display:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .tickets{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .team-grid{grid-template-columns:1fr 1fr;}
+    .mood-grid{grid-template-columns:repeat(2,1fr);}
+    .hl-grid{grid-template-columns:1fr;}
+    .sticky-cta{display:flex;}
+    footer{padding-bottom:5.5rem;}
+  }
+  @media (max-width:480px){
+    .team-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap">
+    <a href="#top" class="logo">
+      <span class="logo-main">NOIR</span>
+      <span class="logo-sub">Barbershop</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#echipa">Echipă</a></li>
+      <li><a href="#program">Program</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+40745229944" class="btn btn-ghost btn-sm">Sună</a>
+      <a href="https://wa.me/40745229944?text=Salut%2C%20vreau%20o%20programare%20la%20Noir%20Barbershop" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">WhatsApp</a>
+      <a href="https://mero.ro/p/noir-barbershop" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Programare</a>
+      <a href="https://www.instagram.com/barbershopnoir?igsh=MTFrOHJsd2g1aDRqOA==" target="_blank" rel="noopener" class="icon-link" aria-label="Noir Barbershop pe Instagram">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+      <button class="burger" aria-label="Deschide meniul" aria-expanded="false" id="burgerBtn">☰</button>
+    </div>
+  </nav>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#despre">Despre</a>
+    <a href="#servicii">Servicii</a>
+    <a href="#echipa">Echipă</a>
+    <a href="#program">Program</a>
+    <a href="https://mero.ro/p/noir-barbershop" target="_blank" rel="noopener">Programează online</a>
+    <a href="tel:+40745229944">Sună: 0745 229 944</a>
+    <a href="https://wa.me/40745229944?text=Salut%2C%20vreau%20o%20programare%20la%20Noir%20Barbershop" target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+    <a href="https://www.instagram.com/barbershopnoir?igsh=MTFrOHJsd2g1aDRqOA==" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-content">
+      <span class="eyebrow">Barbershop · Iași</span>
+      <h1>Stil fără<br><em>compromis.</em></h1>
+      <div class="hero-rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span>4.9 · recenzii clienți</span>
+      </div>
+      <p class="lede">Pe Bulevardul Independenței, Noir oferă tunsori, aranjat barbă și pachete complete într-un spațiu modern, prietenos cu toată lumea — inclusiv cu cei mici și cu blănoșii.</p>
+      <div class="hero-ctas">
+        <a href="https://mero.ro/p/noir-barbershop" target="_blank" rel="noopener" class="btn btn-primary">Programează online</a>
+        <a href="tel:+40745229944" class="btn btn-ghost">Sună acum</a>
+        <a href="https://wa.me/40745229944?text=Salut%2C%20vreau%20o%20programare%20la%20Noir%20Barbershop" target="_blank" rel="noopener" class="btn btn-ghost">Scrie pe WhatsApp</a>
+      </div>
+      <span class="status-badge" id="statusBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">Se verifică programul…</span>
+      </span>
+    </div>
+  </section>
+
+  <div class="stripe-divider"></div>
+
+  <section id="despre">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="eyebrow">Despre Noir</span>
+        <h2>O experiență de îngrijire, nu doar o tunsoare</h2>
+        <p>Fiecare vizită e gândită pe măsura ta — de la un fade impecabil, până la aranjatul bărbii și un blow-dry de final. Lucrăm cu produse de calitate, într-un ritm relaxat, fără grabă.</p>
+        <p>Spațiul e gândit eco-friendly și accesibil pentru toată lumea: poți veni cu copiii sau cu animalul de companie, fără probleme.</p>
+        <div class="tags">
+          <span class="tag">Eco-friendly</span>
+          <span class="tag">Acces facil</span>
+          <span class="tag">Prietenos cu copiii</span>
+          <span class="tag">Prietenos cu animalele</span>
+          <span class="tag">Aproape de transport public</span>
+        </div>
+      </div>
+      <dl class="quickfacts reveal">
+        <dt>Locație</dt>
+        <dd>Bulevardul Independenței 30, Iași</dd>
+        <dt>Telefon</dt>
+        <dd><a href="tel:+40745229944">0745 229 944</a></dd>
+        <dt>Program săptămâna</dt>
+        <dd>Luni – Vineri · 09:00 – 19:00</dd>
+        <dt>Program weekend</dt>
+        <dd>Sâmbătă – Duminică · 10:00 – 17:00</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="de-ce-noir">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <span class="eyebrow">De ce Noir</span>
+        <h2>Ce primești la fiecare vizită</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <span class="why-emoji" aria-hidden="true">✂️</span>
+          <h3>Precizie în detalii</h3>
+          <p>Fiecare linie și fiecare contur sunt lucrate cu atenție, nu în grabă.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-emoji" aria-hidden="true">📅</span>
+          <h3>Programare rapidă online</h3>
+          <p>Îți alegi ora și barberul în câteva secunde, direct din telefon.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-emoji" aria-hidden="true">🧴</span>
+          <h3>Produse profesionale</h3>
+          <p>Folosim doar produse de îngrijire de calitate, potrivite tipului tău de păr.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-emoji" aria-hidden="true">😌</span>
+          <h3>Atmosferă relaxată</h3>
+          <p>Vii, te așezi și te lași pe mâini bune — fără grabă, fără stres.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicii">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <span class="eyebrow">Lista de prețuri</span>
+        <h2>Meniul Noir</h2>
+      </div>
+      <div class="tickets">
+        <div class="ticket reveal">
+          <h3>Tunsori</h3>
+          <div class="svc-row">
+            <div>
+              <div class="svc-name">Tuns si Styling</div>
+              <span class="svc-time">45 min</span>
+            </div>
+            <div class="svc-fill"></div>
+            <div class="svc-price">80 lei</div>
+          </div>
+          <div class="svc-row">
+            <div>
+              <div class="svc-name">Hair Design</div>
+              <span class="svc-time">45 min</span>
+            </div>
+            <div class="svc-fill"></div>
+            <div class="svc-price">100 lei</div>
+          </div>
+        </div>
+
+        <div class="ticket reveal">
+          <h3>Barbă</h3>
+          <div class="svc-row">
+            <div>
+              <div class="svc-name">Aranjat barba si bărbierit</div>
+              <span class="svc-time">15 min</span>
+            </div>
+            <div class="svc-fill"></div>
+            <div class="svc-price">50 lei</div>
+          </div>
+        </div>
+
+        <div class="ticket reveal">
+          <h3>Pachete</h3>
+          <div class="svc-row">
+            <div>
+              <div class="svc-name">Pachet Gentleman</div>
+              <span class="svc-time">1 h</span>
+            </div>
+            <div class="svc-fill"></div>
+            <div class="svc-price">110 lei</div>
+          </div>
+          <div class="svc-row">
+            <div>
+              <div class="svc-name">Pachet Premium</div>
+              <span class="svc-time">1 h 15 min</span>
+              <span class="svc-time">Tuns si aranjat par &amp; barba, Black Mas, tonic si masaj capilar.</span>
+            </div>
+            <div class="svc-fill"></div>
+            <div class="svc-price">140 lei</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="echipa">
+    <div class="wrap">
+      <span class="eyebrow reveal">Echipa</span>
+      <h2 class="reveal section-title">Barberii Noir</h2>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="monogram">DR</div>
+          <h3>David Raba</h3>
+          <div class="team-rating"><span class="stars" aria-hidden="true">★</span> 5.00 (2 evaluări)</div>
+          <p class="team-desc">Hairstylist cu experinta de 5 ani si foarte atent la detalii.</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="monogram">MB</div>
+          <h3>Mihai The Barber</h3>
+          <p class="team-role">Master hairstylist</p>
+          <div class="team-rating"><span class="stars" aria-hidden="true">★</span> 4.96 (98 evaluări)</div>
+          <p class="team-desc">Tunsori premium si fade-uri executate cu precizie. Stil curat, atenție la detalii si experiența de top.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow reveal">Spațiul</span>
+      <h2 class="reveal section-title">Interior modern, atmosferă relaxată</h2>
+    </div>
+    <div class="mood-grid reveal">
+      <button type="button" class="mood-cell" aria-label="Foarfecă — vezi detalii">
+        <span class="mood-inner">
+          <span class="mood-face mood-front">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.5" y2="15.5"/><line x1="8.5" y1="8.5" x2="20" y2="20"/></svg>
+            <span class="mood-tag">Foarfecă</span>
+          </span>
+          <span class="mood-face mood-back">
+            <span class="mood-back-text">Fiecare linie, tăiată cu precizie de milimetru.</span>
+          </span>
+        </span>
+        <span class="mood-burst" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="mood-cell" aria-label="Brici — vezi detalii">
+        <span class="mood-inner">
+          <span class="mood-face mood-front">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="13" height="4" rx="1"/><path d="M16 11h3l2 2-2 2h-3"/></svg>
+            <span class="mood-tag">Brici</span>
+          </span>
+          <span class="mood-face mood-back">
+            <span class="mood-back-text">Bărbierit clasic, cu prosop cald și atenție la fiecare detaliu.</span>
+          </span>
+        </span>
+        <span class="mood-burst" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="mood-cell" aria-label="Pieptăn — vezi detalii">
+        <span class="mood-inner">
+          <span class="mood-face mood-front">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="4" rx="1"/><line x1="6" y1="9" x2="6" y2="19"/><line x1="9.5" y1="9" x2="9.5" y2="19"/><line x1="13" y1="9" x2="13" y2="19"/><line x1="16.5" y1="9" x2="16.5" y2="19"/></svg>
+            <span class="mood-tag">Pieptăn</span>
+          </span>
+          <span class="mood-face mood-back">
+            <span class="mood-back-text">Styling personalizat, potrivit formei feței tale.</span>
+          </span>
+        </span>
+        <span class="mood-burst" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="mood-cell" aria-label="Oglindă — vezi detalii">
+        <span class="mood-inner">
+          <span class="mood-face mood-front">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="10" rx="7" ry="8"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            <span class="mood-tag">Oglindă</span>
+          </span>
+          <span class="mood-face mood-back">
+            <span class="mood-back-text">Te vezi schimbat înainte să te ridici din scaun.</span>
+          </span>
+        </span>
+        <span class="mood-burst" aria-hidden="true"></span>
+      </button>
+    </div>
+    <p class="mood-hint">Atinge fiecare iconiță ↑</p>
+  </section>
+
+  <section id="recenzii">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <span class="eyebrow">Recenzii</span>
+        <h2>Ce spun clienții</h2>
+        <div class="hero-rating" style="justify-content:center; margin-top:0.8rem;">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>recenzii de pe site-ul Noir</span>
+        </div>
+      </div>
+      <div class="review-grid">
+        <div class="review-card reveal">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>„O atmosferă foarte relaxantă și un tuns reușit — se vede pasiunea pusă în fiecare detaliu. Recomand pachetul complet.”</p>
+          <span class="review-author">— I.G.</span>
+        </div>
+        <div class="review-card reveal">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>„Barberul știe mereu exact ce vrei — comunicare foarte bună și rezultate peste așteptări de fiecare dată.”</p>
+          <span class="review-author">— M.D.</span>
+        </div>
+        <div class="review-card reveal">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>„Cel mai bun fade din oraș — calitate constantă de câteva luni bune încoace, din partea unor profesioniști adevărați.”</p>
+          <span class="review-author">— R.S.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="wrap hl-grid">
+      <div class="hours-card reveal">
+        <span class="eyebrow">Program</span>
+        <h2>Te așteptăm</h2>
+        <div class="hours-row"><span>Luni – Vineri</span><span>09:00 – 19:00</span></div>
+        <div class="hours-row"><span>Sâmbătă</span><span>10:00 – 17:00</span></div>
+        <div class="hours-row"><span>Duminică</span><span>10:00 – 17:00</span></div>
+        <p class="addr-line">Bulevardul Independenței 30, Iași<br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=47.165848,27.5875442" target="_blank" rel="noopener">Vezi direcții pe Google Maps →</a></p>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe src="https://www.google.com/maps?q=47.165848,27.5875442&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locația Noir Barbershop pe hartă"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <span class="eyebrow">Programează-te</span>
+      <h2>Rezervă-ți locul</h2>
+      <div class="hero-ctas">
+        <a href="https://mero.ro/p/noir-barbershop" target="_blank" rel="noopener" class="btn btn-primary">Programează online</a>
+        <a href="tel:+40745229944" class="btn btn-ghost">Sună · 0745 229 944</a>
+        <a href="https://wa.me/40745229944?text=Salut%2C%20vreau%20o%20programare%20la%20Noir%20Barbershop" target="_blank" rel="noopener" class="btn btn-ghost">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <span>© <span id="year"></span> Noir Barbershop — Bulevardul Independenței 30, Iași</span>
+    <div style="display:flex; align-items:center; gap:1.2rem;">
+      <a href="tel:+40745229944">0745 229 944</a>
+      <a href="https://www.instagram.com/barbershopnoir?igsh=MTFrOHJsd2g1aDRqOA==" target="_blank" rel="noopener" class="icon-link" aria-label="Noir Barbershop pe Instagram">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="tel:+40745229944" class="btn btn-ghost btn-sm">Sună</a>
+  <a href="https://mero.ro/p/noir-barbershop" target="_blank" rel="noopener" class="btn btn-primary">Programare</a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const panel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('show');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.textContent = isOpen ? '✕' : '☰';
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('show');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.textContent = '☰';
+  }));
+
+  // interior mood cells: tap to flip
+  document.querySelectorAll('.mood-cell').forEach(cell => {
+    cell.addEventListener('click', () => {
+      const wasFlipped = cell.classList.contains('flipped');
+      document.querySelectorAll('.mood-cell.flipped').forEach(c => c.classList.remove('flipped'));
+      if (!wasFlipped) {
+        cell.classList.add('flipped', 'bursting');
+        setTimeout(() => cell.classList.remove('bursting'), 650);
+      }
+    });
+  });
+
+  // open / closed status
+  (function setStatus(){
+    const badge = document.getElementById('statusBadge');
+    const text = document.getElementById('statusText');
+    const now = new Date();
+    const day = now.getDay(); // 0 Sun ... 6 Sat
+    const hour = now.getHours() + now.getMinutes() / 60;
+    const isWeekend = (day === 0 || day === 6);
+    const open = isWeekend ? 10 : 9;
+    const close = isWeekend ? 17 : 19;
+    const isOpen = hour >= open && hour < close;
+
+    if (isOpen) {
+      badge.classList.add('open');
+      const closeStr = String(close).padStart(2,'0') + ':00';
+      text.textContent = 'Deschis acum · până la ' + closeStr;
+    } else {
+      const openStr = String(open).padStart(2,'0') + ':00';
+      text.textContent = 'Închis acum · deschidem la ' + openStr;
+    }
+  })();
+
+  // scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
